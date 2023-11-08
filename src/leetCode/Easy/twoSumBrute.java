@@ -27,7 +27,7 @@ public class twoSumBrute {
         String input = sc.nextLine();
         int target =  sc.nextInt();
         sc.close();
-        System.out.println(Arrays.toString(twoSum(common.methods.getArray(input, "[", "]", ","), target)));
+        System.out.println(Arrays.toString(twoSum(common.methods.getIntArrayFromString(input, "[", "]", ","), target)));
     }
 
     public static int[] twoSum(int[] nums, int target) {

@@ -12,14 +12,14 @@ public class methods {
      * dependencies: org.apache.commons.lang3.StringUtils
      *
      * @param inputString String to be parsed <p>( ex. scanner.nextLine(); )
-     * @param delimiter1 First delimiter ( ex. ' { ' )
-     * @param delimiter2 Second delimiter ( ex. ' } ' )
-     * @param splitBy Split the string around matches of the delimiter ( ex. ' , ' or ' \n ' )
-     * @return int[] the array of integers parsed from the string
+     * @param startDelimiter First delimiter ( ex. ' { ' )
+     * @param endDelimiter Second delimiter ( ex. ' } ' )
+     * @param splitAt Split the string around matches of the delimiter ( ex. ' , ' or ' \n ' )
+     * @return the array of integers parsed from the string
      */
-    public static int[] getArray(String inputString, String delimiter1, String delimiter2, String splitBy) {
-        String s = StringUtils.substringBetween(inputString, delimiter1, delimiter2);
-        String[] arr = s.split(splitBy);
+    public static int[] getIntArrayFromString(String inputString, String startDelimiter, String endDelimiter, String splitAt) {
+        String s = StringUtils.substringBetween(inputString, startDelimiter, endDelimiter);
+        String[] arr = s.split(splitAt);
 
         if (arr.length == 1 && arr[0].isEmpty()) {
             return new int[0];
@@ -27,6 +27,20 @@ public class methods {
         return Arrays.stream(arr).mapToInt(string -> Integer.parseInt(string.trim())).toArray();
     }
 
-
+    /**
+     * Returns true if value is between min and max.
+     *
+     * @param value number to check
+     * @param min lower bound
+     * @param max upper bound
+     * @param inclusive true if min and max are inclusive
+     * @return true or false
+     */
+    public static boolean isBetween(int value, int min, int max, boolean inclusive) {
+        if (inclusive) {
+            return((value >= min) && (value <= max));
+        }
+        return((value > min) && (value < max));
+    }
 
 }

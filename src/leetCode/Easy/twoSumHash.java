@@ -29,14 +29,13 @@ public class twoSumHash {
         String input = sc.nextLine();
         int target =  sc.nextInt();
         sc.close();
-        System.out.println(Arrays.toString(twoSum(common.methods.getArray(input, "[", "]", ","), target)));
+        System.out.println(Arrays.toString(twoSum(common.methods.getIntArrayFromString(input, "[", "]", ","), target)));
     }
 
     public static int[] twoSum(int[] nums, int target) { //uses hash map
         Map<Integer, Integer> numsMap = new HashMap<>(); //key = number, value = index
-        int numsLength = nums.length;                    //ex. [2,7,11,15] -> {2=0, 7=1, 11=2, 15=3}
-
-        for(int i = 0; i < numsLength; i++) {            //iterate through nums
+                                                         //ex. [2,7,11,15] -> {2=0, 7=1, 11=2, 15=3}
+        for(int i : nums) {                              //iterate through nums
             int complement = target - nums[i];           //complement = target - current number
             if(numsMap.containsKey(complement)) {                //if complement is in numsMap
                 return new int[] { numsMap.get(complement), i }; //return indices of complement and current number
