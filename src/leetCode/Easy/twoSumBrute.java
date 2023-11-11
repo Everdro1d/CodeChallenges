@@ -17,6 +17,7 @@ package leetCode.Easy;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import static common.methods.*;
 
 public class twoSumBrute {
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class twoSumBrute {
         String input = sc.nextLine();
         int target =  sc.nextInt();
         sc.close();
-        System.out.println(Arrays.toString(twoSum(common.methods.getIntArrayFromString(input, "[", "]", ","), target)));
+        System.out.println(Arrays.toString(twoSum(getIntArrayFromString(input, "[", "]", ","), target)));
     }
 
     public static int[] twoSum(int[] nums, int target) {

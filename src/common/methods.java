@@ -1,7 +1,6 @@
 package common;
 
 import org.apache.commons.lang3.StringUtils;
-
 import java.util.Arrays;
 
 public class methods {
@@ -41,6 +40,10 @@ public class methods {
             return((value >= min) && (value <= max));
         }
         return((value > min) && (value < max));
+    }
+
+    public static String removeWhitespaces(String s) {
+        return s.replaceAll("\\s", "");
     }
 
 }

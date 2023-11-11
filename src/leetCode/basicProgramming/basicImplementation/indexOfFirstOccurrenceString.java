@@ -22,6 +22,8 @@
 
 package leetCode.basicProgramming.basicImplementation;
 
+import static common.methods.*;
+
 public class indexOfFirstOccurrenceString {
     public static void main(String[] args) {
         String descriptor = "This program returns the index of the first occurrence of needle in haystack, " +
@@ -38,7 +40,7 @@ public class indexOfFirstOccurrenceString {
     public static int firstOccurrence(String haystack, String needle) {
         int output = -1;
         //constraints
-        if ( (haystack+needle).matches("[a-z]") && !( (common.methods.isBetween(haystack.length(), 1, 10000, true) )
+        if ( (haystack+needle).matches("[a-z]") && !( isBetween(haystack.length(), 1, 10000, true)
                 || ( needle.length() > haystack.length()) ) )
         {
             return output;

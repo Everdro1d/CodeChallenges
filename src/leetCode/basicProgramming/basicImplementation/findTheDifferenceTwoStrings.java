@@ -16,6 +16,7 @@ package leetCode.basicProgramming.basicImplementation;
 
 import java.util.HashSet;
 import java.util.Scanner;
+import static common.methods.*;
 
 public class findTheDifferenceTwoStrings {
     public static void main(String[] args) {
@@ -32,7 +33,7 @@ public class findTheDifferenceTwoStrings {
     public static char findTheDifference(String s, String t) {
         // check constraints:
         // (0 <= s.length <= 1000) and (t.length == s.length + 1) and s and t consist of lower-case English letters.
-        if ( (s+t).matches("[a-z]") && !( (common.methods.isBetween(s.length(), 0, 1000, true) )
+        if ( (s+t).matches("[a-z]") && !( isBetween(s.length(), 0, 1000, true)
                 || ( t.length() == s.length() + 1) ) )
         {
             return ' ';
